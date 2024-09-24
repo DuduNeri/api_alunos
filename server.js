@@ -11,7 +11,7 @@ app.use(cors());
 app.get("/", async (req, res) => {
   try {
     const alunos = await connection.query(`select * from alunos;`);
-    res.send(alunos.rows);
+    res.send(alunos)
   } catch (error) {
     console.log(error);
     res.status(500).send("Erro ao buscar alunos");
